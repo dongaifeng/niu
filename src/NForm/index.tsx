@@ -14,12 +14,11 @@ import {
 
 } from "antd";
 
-import type { MenuProps, PaginationProps } from "antd";
+import type { MenuProps } from "antd";
 
-import { useDebounce } from "utils/hooks";
 import styles from "./index.module.less";
 const { Option } = Select;
-const defaultType = 1;
+
 
 
 export enum FormType {
