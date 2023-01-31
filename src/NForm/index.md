@@ -1,6 +1,6 @@
 ---
 nav:
-  title: NForm
+  title: Components
   path: /components
 ---
 

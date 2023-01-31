@@ -1,6 +1,8 @@
 ---
+group:
+  title: 基础
 nav:
-  title: 表单
+  title: 组件
   path: /components
 ---
 
@@ -21,22 +23,19 @@ enum FormType {
 const fields = [
   {
     type: FormType.Input,
-    label: '名称',
+    label: '输入框',
     name: 'name',
-    // children: <Input />,
-    placeholder: '请输入名称',
+    placeholder: '请输入',
     rules: [
-      { required: true, message: '请输入名称' },
+      { required: true, message: '请输入内容' },
       { type: 'string', max: 6, message: '最多输入六个中文字符' },
     ],
   },
   {
     type: FormType.Select,
-    label: '所属分组',
+    label: '下拉框',
     name: 'portalGroupId',
-    placeholder: '请选择所属分组',
-
-    // children: <Input />,
+    placeholder: '请选择',
     rules: [{ required: true, message: '请选择所属分组' }],
     options: [],
   },
@@ -44,9 +43,7 @@ const fields = [
     type: FormType.TextArea,
     label: '描述',
     name: 'description',
-    placeholder: '请输入描述',
-
-    // children: <Input.TextArea />,
+    placeholder: '请输入',
   },
   {
     type: FormType.UploadImg,

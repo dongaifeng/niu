@@ -1,4 +1,6 @@
 ---
+group:
+  title: 基础
 nav:
   title: 组件
   path: /components
