@@ -119,4 +119,4 @@ const NForm: FC<IProp> = ({ fields }) => {
 
 // Portal.FormType = FormType
 
-export default React.memo(NForm);
+export default NForm;
