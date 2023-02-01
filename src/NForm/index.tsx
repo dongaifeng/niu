@@ -8,7 +8,7 @@ import React, {
   useCallback,
 } from 'react';
 import { ReactElement } from 'react';
-import { Select, Input, Button, Form, Space, Upload } from 'antd';
+import { Select, Input, Button, Form, Space, Upload, Checkbox } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 
 import { MenuProps } from 'antd';
@@ -20,6 +20,7 @@ export enum FormType {
   Input = 'Input',
   Select = 'Select',
   TextArea = 'TextArea',
+  Checkbox = 'Checkbox',
   UploadImg = 'UploadImg',
 }
 
@@ -27,6 +28,7 @@ export interface FieldsType {
   type: FormType;
   label: string;
   name: string;
+  defaultValue?: any;
   placeholder?: string;
   children?: ReactElement;
   extra?: string;
@@ -37,14 +39,14 @@ export interface FieldsType {
 
 type IProp = {
   fields: any;
+  layout: string;
 };
 
-const NForm: FC<IProp> = ({ fields }) => {
+const NForm: FC<IProp> = ({ fields, ...other }) => {
   const [_fields, setFields] = useState<any>([]); // 表单项
   const [initialValues, setInitialValues] = useState<any>({});
   const [form] = Form.useForm();
 
-  // 初始化表单 TODO 走两遍需优化
   useEffect(() => {
     const filedss = fields.map((item: FieldsType, index: number) => {
       switch (item.type) {
@@ -61,6 +63,17 @@ const NForm: FC<IProp> = ({ fields }) => {
                   </Option>
                 ))}
             </Select>
+          );
+          break;
+        case FormType.Checkbox:
+          const options = item.options
+            ? item.options.map(i => ({ label: i.label, value: i.key }))
+            : [];
+          item.children = (
+            <Checkbox.Group
+              options={options}
+              defaultValue={item.defaultValue || ''}
+            />
           );
           break;
         case FormType.TextArea:
@@ -102,21 +115,20 @@ const NForm: FC<IProp> = ({ fields }) => {
         labelCol={{ span: 6 }}
         wrapperCol={{ span: 18 }}
         onFinish={onFinish}
+        {...other}
       >
         {_fields}
-        <Form.Item>
+        {/* <Form.Item>
           <Space align="end">
             <Button>取 消</Button>
             <Button type="primary" htmlType="submit">
               确 定
             </Button>
           </Space>
-        </Form.Item>
+        </Form.Item> */}
       </Form>
     </div>
   );
 };
-
-// Portal.FormType = FormType
 
 export default NForm;

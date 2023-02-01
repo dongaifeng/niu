@@ -1,7 +1,7 @@
 {
   "private": true,
-  "name": "dumi-template",
-  "version": "1.0.0",
+  "name": "niu",
+  "version": "0.0.1",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",

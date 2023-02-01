@@ -12,7 +12,7 @@ Demo:
 
 ```tsx
 import React from 'react';
-import { NForm } from 'dumi-template';
+import { NForm } from 'niu';
 
 enum FormType {
   Input = 'Input',
@@ -44,14 +44,6 @@ const fields = [
     label: '描述',
     name: 'description',
     placeholder: '请输入',
-  },
-  {
-    type: FormType.UploadImg,
-    label: '门户图标',
-    name: 'logoUrl',
-    rules: [{ required: true, message: '请上传门户图标' }],
-    extra: '支持拓展名jpg/png的小于5mb的图片',
-    // children: <Input.TextArea />,
   },
 ];
 
