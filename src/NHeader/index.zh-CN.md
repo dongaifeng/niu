@@ -6,15 +6,15 @@ nav:
   path: /components
 ---
 
-## Foo
+## Nheader
 
 Demo:
 
 ```tsx
 import React from 'react';
-import { Foo } from 'niu';
+import { NHeader } from 'niu';
 
-export default () => <Foo title="First Demo" />;
+export default () => <NHeader title="First Demo" />;
 ```
 
 [更多技巧](https://d.umijs.org/guide/demo-principle)

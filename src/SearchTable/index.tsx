@@ -10,7 +10,6 @@ import React, {
 import { ReactElement } from 'react';
 import { Select, Input, Button, Form, Space, Upload, Table, Tag } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-
 import { MenuProps } from 'antd';
 import NForm from '../NForm';
 
