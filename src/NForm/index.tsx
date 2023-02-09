@@ -39,7 +39,7 @@ export interface FieldsType {
 
 type IProp = {
   fields: any;
-  layout: string;
+  layout: any;
 };
 
 const NForm: FC<IProp> = ({ fields, ...other }) => {
